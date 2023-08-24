@@ -9,7 +9,7 @@ const Navbar = () => {
 			<ul className='menu'>
 				<li><Link className='menu-link' to='/'>Inicio</Link></li>
 				{/* <li><Link className='menu-link' to='/productos/comics'>Comic</Link></li> */}
-				<li><Link className='menu-link' to='/productos/mangas'>Manga</Link></li>
+				<li><Link className='menu-link' to='/productos/manga'>Manga</Link></li>
 				{/* <li><Link className='menu-link' to='/productos/libros'>Libros</Link></li> */}
 				<li><Link className='menu-link' to='/nosotros'>Nosotros</Link></li>
 				<li><Link className='menu-link' to='/contacto'>Contacto</Link></li>
