@@ -4,9 +4,6 @@ import ItemCount from "../ItemCount/ItemCount"
 
 const ItemDetail = ({ item }) => {
 
-	const { carrito, agregarAlCarrito } = useContext(CartContext);
-	console.log(carrito);
-
 	const [cantidad, setCantidad] = useState(1);
 
 	const handleRestar = () => {
@@ -17,15 +14,17 @@ const ItemDetail = ({ item }) => {
 		cantidad < item.stock && setCantidad(cantidad + 1)
 	}
 
+	console.log(item);
+
 	return (
 		<div className="container">
 			<div className="producto-detalle">
-				<img src={item.imagen} alt={item.titulo} />
+				<img src={item.images.jpg.large_image_url} alt={item.title} />
 				<div>
-					<h3 className="titulo">{item.titulo}</h3>
-					<p className="descripcion">{item.descripcion}</p>
-					<p className="categoria">Categoría: {toCapital(item.categoria)}</p>
-					<p className="precio">${item.precio}</p>
+					<h3 className="titulo">{item.title}</h3>
+					<p className="descripcion">{item.synopsis}</p>
+					<p className="categoria">Categoría: {item.type}</p>
+					<p className="precio">${item.score}</p>
 					<ItemCount
 						cantidad={cantidad}
 						handleSumar={handleSumar}
