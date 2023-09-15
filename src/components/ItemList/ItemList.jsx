@@ -3,13 +3,13 @@ import Item from '../Item/Item';
 const ItemList = ({ productos, titulo }) => {
 	return (
 		<div className='container'>
-			<h1 className='main-title'> { titulo } </h1>
+			<h2 className='main-title'> { titulo } </h2>
 			<div className='productos'>
 				{
 					productos.map((producto) => {
 						return (
-							<div>
-								<Item key={producto.mal_id} producto={producto} />
+							<div key={producto.mal_id}>
+								<Item producto={producto} />
 							</div>
 						)
 					})

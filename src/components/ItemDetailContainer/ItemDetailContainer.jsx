@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import data from '../../data/database.json';
+import { getById } from "../../helpers/askData";
 
 
 const ItemDetailContainer = () => {
@@ -10,15 +11,10 @@ const ItemDetailContainer = () => {
 	const { id } = useParams();
 
 	useEffect(() => {
-		const PedirDetalle = () => {
-			return new Promise((resolve, reject) => {
-				resolve(data.data.filter(elem => elem.mal_id == id));
+		getById(id)
+			.then((res) => {
+				setItem(res);
 			});
-		};
-
-		PedirDetalle().then((res) => {
-			setItem(res[0]);
-		});
 	}, [id]);
 
 	return (

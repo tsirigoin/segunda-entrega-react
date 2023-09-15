@@ -5,8 +5,7 @@ const Item = ({ producto }) => {
 		<div className="producto">
 			<img src={producto.images.jpg.large_image_url} alt={producto.title} />
 			<div>
-				<h2>{producto.title}</h2>
-				<p>{producto.synopsis}</p>
+				<h3>{producto.title}</h3>
 				<br />
 				<p>{producto.demographics.map((demo) => {
 					return (demo.name)
